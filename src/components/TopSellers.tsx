@@ -40,27 +40,27 @@ const TopSellers = () => {
   };
 
   return (
-    <div className="bg-white p-5 mx-5 mt-[5rem] border w-[23rem] rounded">
-      <h2 className="text-xl font-bold mb-5">Top Sellers</h2>
+    <div className="bg-white p-4 sm:p-5 mx-2 sm:mx-5 mt-4 sm:mt-[5rem] border w-full sm:w-[23rem] rounded">
+      <h2 className="text-lg sm:text-xl font-bold mb-5">Top Sellers</h2>
 
       <ul>
         {authors.map((author, index) => (
           <li
             key={index}
-            className="flex items-center justify-between mb-4"
+            className="flex flex-col sm:flex-row items-center justify-between mb-4 gap-3 sm:gap-0"
           >
-            <section className="flex justify-center items-center">
+            <section className="flex justify-start items-center gap-3 flex-1 min-w-0">
               <img
                 src={author.image}
                 alt={author.name}
-                className="w-[25%] h-[25%] justify-center rounded-full"
+                className="w-12 h-12 rounded-full flex-shrink-0"
               />
-              <span className="ml-4">{author.name}</span>
+              <span className="text-sm sm:text-base truncate">{author.name}</span>
             </section>
 
             <button
               onClick={() => handleFollowClick(index)}
-              className={`py-1 px-3 rounded ${author.isFollowing ? "bg-red-500 text-white" : "bg-black text-white"}`}
+              className={`py-1 px-3 rounded text-sm sm:text-base flex-shrink-0 ${author.isFollowing ? "bg-red-500 text-white" : "bg-black text-white"}`}
             >
               {author.isFollowing ? "Unfollow" : "Follow"}
             </button>

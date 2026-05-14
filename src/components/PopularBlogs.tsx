@@ -29,23 +29,23 @@ const PopularBlogs = () => {
     },
   ];
   return (
-    <div className="bg-white p-5 w-[23rem] mt-4 boder ml-5 rounded">
-      <h2 className="text-xl font-bold mb-5">Popular Blogs</h2>
+    <div className="bg-white p-4 sm:p-5 w-full sm:w-[23rem] my-4 border ml-0 sm:ml-5 rounded">
+      <h2 className="text-lg sm:text-xl font-bold mb-5">Popular Blogs</h2>
       <ul>
         {blogs.map((blog, index) => (
           <li
             key={index}
             className="mb-4"
           >
-            <div className="flex justify-between items-center">
-              <span className="font-bold mb-2">{blog.title}</span>
+            <div className="flex justify-between items-start">
+              <span className="font-bold mb-2 text-sm sm:text-base break-words">{blog.title}</span>
             </div>
-            <span className="text-sm text-gray-600">
+            <span className="text-xs sm:text-sm text-gray-600">
               Published by {blog.author}
             </span>
-            <div className="flex items-center mt-2">
-              <MessageCircle size={16} />
-              <span className="text-gray-500 mr-5 ml-1">
+            <div className="flex items-center mt-2 gap-3">
+              <MessageCircle size={14} className="sm:w-4 sm:h-4" />
+              <span className="text-xs sm:text-sm text-gray-500">
                 {blog.likes}
               </span>
               <ThumbsUp size={16} />
